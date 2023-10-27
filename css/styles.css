@@ -1156,6 +1156,7 @@ img {
     align-items: baseline;
     flex-wrap: nowrap;
     gap: unset;
+    width: auto;
   }
 
   .footer-logo {
