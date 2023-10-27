@@ -134,7 +134,7 @@ img {
 
 .contact {
   font-style: normal;
-  padding: 24px;
+
   display: none;
 }
 
@@ -276,7 +276,8 @@ img {
 .team-list {
   display: flex;
   gap: 72px;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .team-title {
@@ -287,9 +288,6 @@ img {
   border-radius: 0px 0px 4px 4px;
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
-}
-.team-img {
-  width: 100%;
 }
 
 .team-card-text {
@@ -742,10 +740,10 @@ img {
 @media screen and (min-width: 0px) {
   /* MOBILE MENU */
 
-  .is-open {
+  .mob-menu.is-open {
     overflow: hidden;
-    opacity: 0;
-    visibility: hidden;
+    opacity: 1;
+    visibility: visible;
   }
 
   .modal-btn-close {
@@ -785,8 +783,8 @@ img {
     text-transform: capitalize;
   }
 
-  .mob-menu-link-active {
-    color: #404bbf;
+  .mob-contact-items .mob-menu-link-active {
+    color: #4d5ae5;
   }
 
   .mob-menu {
@@ -800,6 +798,10 @@ img {
     padding: 72px 24px 40px 16px;
     display: flex;
     flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .mob-contact {
@@ -819,6 +821,7 @@ img {
     font-weight: 500;
     line-height: 1.2; /* 120% */
     letter-spacing: 0.4px;
+    color: #434455;
   }
 
   .mob-card-social {
@@ -834,7 +837,6 @@ img {
 
   /* Mobile backdrop */
   .backdrop.is-open {
-    overflow: hidden;
     opacity: 1;
     visibility: visible;
   }
@@ -853,6 +855,7 @@ img {
   /* header TAB*/
   .head {
     padding: 0 16px 0 16px;
+    align-items: center;
   }
   .mobile-head-menu {
     display: none;
@@ -862,7 +865,7 @@ img {
   }
   .contact {
     font-style: normal;
-    padding: 16px;
+
     display: flex;
   }
   .header-contact-list {
@@ -913,9 +916,6 @@ img {
   /* end Hero Tab*/
 
   /* features TAB */
-  .features {
-    padding: 120px 0;
-  }
 
   .features-list {
     flex-direction: row;
@@ -943,14 +943,9 @@ img {
   /* end features TAB */
 
   /* team section TAB */
-  .team-section {
-    padding: 120px 0;
-  }
 
   .team-list {
     gap: 64px 24px;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
   }
 
@@ -982,7 +977,7 @@ img {
     align-items: baseline;
     flex-wrap: wrap;
     gap: 72px 24px;
-    justify-content: center;
+    width: 584px;
   }
   .footer-logo {
   }
@@ -1050,7 +1045,6 @@ img {
 
   .contact {
     font-style: normal;
-    padding: 24px;
   }
 
   .header-contact-list {
@@ -1208,28 +1202,4 @@ img {
     min-height: 584px;
   }
   /* END modal PC */
-
-  @media (min-device-pixel-ratio: 2),
-    (min-resolution: 192dpi),
-    (min-resolution: 2dppx) {
-    .hero-section {
-      background-image: linear-gradient(
-          rgba(46, 47, 66, 0.7),
-          rgba(46, 47, 66, 0.7)
-        ),
-        url('../images/desktop/people-office-pc.jpg');
-    }
-  }
-}
-
-@media (min-device-pixel-ratio: 2),
-  (min-resolution: 192dpi),
-  (min-resolution: 2dppx) {
-  .hero-section {
-    background-image: linear-gradient(
-        rgba(46, 47, 66, 0.7),
-        rgba(46, 47, 66, 0.7)
-      ),
-      url('../images/tablet/Dark-bg-tab.jpg');
-  }
 }
